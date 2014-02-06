@@ -1,8 +1,7 @@
-name: "hikari"
-description: "Fluid, responsive blog theme for Jekyll"
+name: "BRAD'S WEB LOG"
+description: "You ascend to the status of Demigod..."
 
-url: "http://m3xm.github.io"
-baseurl: /hikari-for-Jekyll
+url: "http://bsimm.github.io"
 
 markdown: rdiscount
 permalink: :year/:month/:title.html
