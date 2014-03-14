@@ -9,7 +9,7 @@ I've modified the script from my previous post to download the images from an al
 ruby script.rb CLIENT_ID ALBUM_ID destination_folder
 {% endhighlight %}
 
-This implementation is very brittle and will only function with the arguments in the correct order.  Future posts will see this script move toward a fully tested executable.  Don't forget to change the permissions!
+This implementation is very brittle and future posts will see this script move toward a fully tested executable.  Don't forget to change the permissions!
 
 {% highlight bash %}
 chmod u+x path/to/script.rb
