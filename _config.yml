@@ -1,7 +1,7 @@
 name: "BRAD'S WEB LOG"
 description: "You ascend to the status of Demigod..."
 
-url: "http://bsimm.github.io"
+url: "https://bsimm.github.io"
 
 markdown: rdiscount
 permalink: :year/:month/:title.html
