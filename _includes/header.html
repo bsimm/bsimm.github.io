@@ -38,6 +38,26 @@
       content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"
     />
 
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="{{ site.url }}/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ site.url }}/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{ site.url }}/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{ site.url }}/apple-touch-icon.png"
+    />
+
     <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700&display=swap"
@@ -62,12 +82,10 @@
   <body>
     <div id="off-canvas">
       <div id="avatar">
-        <a href="https://imgur.com/ZujFXNQ"
-          ><img
-            src="https://i.imgur.com/ZujFXNQs.jpg"
-            alt="Avatar"
-            title="Hosted by imgur.com"
-        /></a>
+        <img
+          src="{{ site.url }}/bomb.gif"
+          alt="Avatar"
+        />
       </div>
       <div id="bio">
         <h1>HELLO INTERNET!</h1>
