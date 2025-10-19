@@ -1,52 +1,44 @@
-//TODO: implement an equivalent to $(document.ready)
-//window.onload will do the job for now.
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", function () {
+  const menuIcon = document.querySelector(".menu-icon");
+  const offCanvas = document.getElementById("off-canvas");
 
-    var $menuIcon = document.getElementsByClassName("menu-icon")[0],
-        $offCanva = document.getElementById('off-canvas');
+  if (menuIcon && offCanvas) {
+    menuIcon.addEventListener(
+      "click",
+      function () {
+        menuIcon.classList.toggle("close");
+        offCanvas.classList.toggle("toggled");
+      },
+      false,
+    );
+  }
 
-    $menuIcon.addEventListener('click', function() {
-        toggleClass($menuIcon, 'close');
-        toggleClass($offCanva, 'toggled');
-    }, false);
+  // Open Twitter/share in a Pop-Up
+  const popup = document.querySelector(".popup");
+  if (!popup) {
+    return;
+  }
 
-    function toggleClass(element, className) {
-        if (!element || !className) {
-            return;
-        }
+  popup.addEventListener("click", function (e) {
+    e.preventDefault();
+    const width = 575;
+    const height = 400;
+    const left = (document.documentElement.clientWidth - width) / 2;
+    const top = (document.documentElement.clientHeight - height) / 2;
+    const url = this.href;
+    const opts =
+      "status=1" +
+      ",width=" +
+      width +
+      ",height=" +
+      height +
+      ",top=" +
+      top +
+      ",left=" +
+      left;
 
-        var classString = element.className,
-            nameIndex = classString.indexOf(className);
+    window.open(url, "twitter", opts);
 
-        if (nameIndex == -1) {
-            classString += ' ' + className;
-        }
-        else {
-            classString = classString.substr(0, nameIndex) + classString.substr(nameIndex+className.length);
-        }
-        element.className = classString;
-    }
-
-    // Open Twitter/share in a Pop-Up
-    var $popup = document.getElementsByClassName("popup")[0];
-    if (!$popup) {
-        return;
-    }
-    $popup.addEventListener('click', function(e) {
-        e.preventDefault()
-        var width  = 575,
-            height = 400,
-            left   = (document.documentElement.clientWidth  - width)  / 2,
-            top    = (document.documentElement.clientHeight - height) / 2,
-            url    = this.href,
-            opts   = 'status=1' +
-                     ',width='  + width  +
-                     ',height=' + height +
-                     ',top='    + top    +
-                     ',left='   + left;
-
-        window.open(url, 'twitter', opts);
-
-        return false;
-    });
-}
+    return false;
+  });
+});
