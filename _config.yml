@@ -2,7 +2,12 @@ name: "BRAD'S WEB LOG"
 description: "You ascend to the status of Demigod..."
 
 url: "https://bsimm.github.io"
+baseurl: ""
 
-markdown: rdiscount
+markdown: kramdown
+highlighter: rouge
 permalink: :year/:month/:title.html
-pygments: true
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
